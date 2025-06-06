@@ -36,6 +36,10 @@ public class Code extends JFrame implements GLEventListener {
     public void display(GLAutoDrawable drawable)
     {
         GL4 gl = (GL4) GLContext.getCurrentGL();
+        // clear the screen before drawing
+        gl.glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+        gl.glClear(GL.GL_COLOR_BUFFER_BIT);
+
         gl.glUseProgram(renderingProgram);
         gl.glPointSize(40.0f);
         gl.glDrawArrays(GL4.GL_POINTS,0,1);
